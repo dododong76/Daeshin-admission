@@ -19,4 +19,12 @@ def delete_todo(request):
     Todo.objects.get( id =a ).delete() 
     return HttpResponseRedirect( reverse('index') )
 
+def show_info(request):
+    name = request.GET['name']
+    id = request.GET['id']
+    email = request.GET['email']
+    return HttpResponse( str(name) ) 
+    # return HttpResponseRedirect( reverse('index') )
+
+
     
